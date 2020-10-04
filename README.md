@@ -15,6 +15,13 @@
 3. Count of sessions by geography columns last 7 days
 4. GA360-style sessions with page views, transactions, experiences, segment movements etc as nested repeating columns
 
+## Transactions
+
+1. Revenue per Referrer
+2. Transactions by Day
+3. Visitor Page View Journey up to Transaction
+4. Number of Converters per Segment
+
 ## Products
 
 1. Product metrics (views, basket views, converters etc) for last 7 days
@@ -36,4 +43,4 @@
 
 1. First, Last, Even-Click and Behavioral Attribution Basket Value by Campaign for Last 7 days
 2. Entrances in a single visitor purchase cycle
-3. All Referrer Channel Columns and Metrics for a Visitor over Entrances within their Purchase Cycles 
+3. All Referrer Channel Columns and Metrics for a Visitor over Entrances within their Purchase Cycles
