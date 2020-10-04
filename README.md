@@ -1,4 +1,4 @@
-# Example Google BigQuery StandardSQL Queries for Qubit Live Tap
+# Example BigQuery StandardSQL Queries for Qubit Live Tap
 
 ## Views and Visitors
 
