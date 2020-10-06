@@ -7,6 +7,8 @@
 3. Visitor details (total views, new or returning, lifetime value, number of conversions etc)
 4. Visitor views, sessionized, over time
 5. Visitor pageview journey over time
+6. Visitors count by entrance month cohort
+7. Visitor engagement by entrance month cohort
 
 ## Sessions
 
@@ -21,6 +23,7 @@
 2. Transactions by Day
 3. Visitor Page View Journey up to Transaction
 4. Number of Converters per Segment
+5. Visitor spend by purchase cycle
 
 ## Products
 

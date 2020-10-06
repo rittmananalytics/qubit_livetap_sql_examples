@@ -3,7 +3,7 @@ WITH
   SELECT
     *
   FROM
-    `qubit-client-37262.wolfandbadger__v2.livetap_session`
+    `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_session`
   WHERE
     ((( property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY)))
         AND ( property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY), INTERVAL 7 DAY))))) ),
@@ -11,7 +11,7 @@ WITH
   SELECT
     *
   FROM
-    `qubit-client-37262.wolfandbadger__v2.livetap_entrance`
+    `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_entrance`
   WHERE
     ((( property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY)))
         AND ( property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY), INTERVAL 7 DAY))))) ),
@@ -19,7 +19,7 @@ WITH
   SELECT
     *
   FROM
-    `qubit-client-37262.wolfandbadger__v2.livetap_transaction`
+    `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_transaction`
   WHERE
     ((( property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY)))
         AND ( property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY), INTERVAL 7 DAY))))) ),
@@ -61,7 +61,7 @@ WITH
     product.product_interaction_type product_interaction_type,
     product.meta_type meta_type
   FROM
-    `qubit-client-37262.wolfandbadger__v2.livetap_product` v
+    `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_product` v
   LEFT JOIN
     UNNEST (product) AS product
   WHERE
@@ -103,7 +103,7 @@ WITH
     experience.experience_paused_on_view AS experience_paused_on_view,
     experience.experience_paused_within_15_days AS experience_paused_within_15_days
   FROM
-    `qubit-client-37262.wolfandbadger__v2.livetap_experience`
+    `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_experience`
   LEFT JOIN
     UNNEST (experience) AS experience
   WHERE
@@ -154,7 +154,7 @@ WITH
           MIN(iterationCreatedAt) AS iteration_created_at,
           MIN(iterationUpdatedAt) AS iteration_upadted_at
         FROM
-          `qubit-client-37262.wolfandbadger__v2.aux_experience_iteration_variation_v01`
+          `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.aux_experience_iteration_variation_v01`
         GROUP BY
           1,
           2,
@@ -266,7 +266,7 @@ SELECT
     COUNT(DISTINCT q_transaction_v01.transaction_id) AS transactions,
     SUM(q_transaction_v01.basket_total_baseValue) AS total_transactions) totals
 FROM
-  `qubit-client-37262.wolfandbadger__v2.livetap_view` AS q_view_v01
+  `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_view` AS q_view_v01
 LEFT JOIN
   q_session_v01
 ON
