@@ -1,4 +1,4 @@
-# Example BigQuery StandardSQL Queries for Qubit Live Tap
+# Example BQ StandardSQL Queries for Qubit Live Tap
 
 (See [Data Dictionary](./data_dictionary.md) for table and column definitions)
 
