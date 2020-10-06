@@ -9,7 +9,7 @@ SELECT
 	q_view_v01.context_lifetimeValue_baseValue  AS q_view_v01_context_lifetime_value_base_value,
 	q_view_v01.context_conversionNumber  AS q_view_v01_context_conversion_number,
 	q_view_v01.user_loyalty_tier  AS q_view_v01_user_loyalty_tier
-FROM `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_view`  AS q_view_v01
+FROM `qubit-client-37040.halfords_uk_prod__v2.livetap_view`  AS q_view_v01
 
 WHERE
 	(((q_view_v01.property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY))) AND (q_view_v01.property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY), INTERVAL 7 DAY)))))

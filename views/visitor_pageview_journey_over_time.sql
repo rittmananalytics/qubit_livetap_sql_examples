@@ -5,7 +5,7 @@ SELECT
 	q_view_v01.context_sessionViewNumber  AS q_view_v01_context_session_view_number,
 	q_view_v01.meta_url  AS q_view_v01_meta_url,
 	q_view_v01.page_subtype  AS q_view_v01_page_subtype
-FROM `qubit-client-CLIENTPROJECTNUM.CLIENTNAME__v2.livetap_view`  AS q_view_v01
+FROM `qubit-client-37040.halfords_uk_prod__v2.livetap_view`  AS q_view_v01
 
 WHERE ((UPPER(q_view_v01.context_id ) = UPPER('7k13x3g78m4-0kdq6l42v-slqbkzk')))
 GROUP BY 1,2,3,4,5,6

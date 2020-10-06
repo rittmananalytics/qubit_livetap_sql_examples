@@ -28,7 +28,7 @@ WITH view AS (WITH View as (SELECT
           ROW_NUMBER() OVER (PARTITION BY context_id, context_viewNumber ORDER BY meta_serverTs ASC) as event_number,
           meta_url
         FROM
-          `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.event_ecView`
+          `qubit-client-37040.halfords_uk_prod__v2____v2.event_ecView`
         WHERE
           --((( meta_serverTs ) >= ((TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY))) AND ( meta_serverTs ) < ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL 1 DAY)))))
       (TIMESTAMP_ADD(meta_serverTs, INTERVAL 1 HOUR)  >= TIMESTAMP_TRUNC( TIMESTAMP_ADD(current_timestamp, INTERVAL 1 HOUR) , DAY) )
@@ -80,7 +80,7 @@ SELECT
             '-')) AS product_transaction_id,
           meta_type
         FROM
-          `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.event_ecBasketItemTransaction`
+          `qubit-client-37040.halfords_uk_prod__v2____v2.event_ecBasketItemTransaction`
         WHERE
            TIMESTAMP_ADD(meta_serverTs, INTERVAL 3600000000 MICROSECOND) >= TIMESTAMP_TRUNC(TIMESTAMP_ADD(current_timestamp,INTERVAL 3600000000 MICROSECOND) ,DAY)
         --  ((( meta_serverTs ) >= ((TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY))) AND ( meta_serverTs ) < ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL 1 DAY)))))
@@ -109,7 +109,7 @@ SELECT
             '-')) AS product_transaction_id,
           meta_type
         FROM
-          `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.event_ecProduct`
+          `qubit-client-37040.halfords_uk_prod__v2____v2.event_ecProduct`
         WHERE
          TIMESTAMP_ADD(meta_serverTs, INTERVAL 3600000000 MICROSECOND) >= TIMESTAMP_TRUNC(TIMESTAMP_ADD(current_timestamp,INTERVAL 3600000000 MICROSECOND) ,DAY)
           --((( meta_serverTs ) >= ((TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY))) AND ( meta_serverTs ) < ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL 1 DAY)))))
@@ -138,7 +138,7 @@ SELECT
             '-')) AS product_transaction_id,
           meta_type
         FROM
-          `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.event_ecBasketItem`
+          `qubit-client-37040.halfords_uk_prod__v2____v2.event_ecBasketItem`
         WHERE
           TIMESTAMP_ADD(meta_serverTs, INTERVAL 3600000000 MICROSECOND) >= TIMESTAMP_TRUNC(TIMESTAMP_ADD(current_timestamp,INTERVAL 3600000000 MICROSECOND) ,DAY)
           --((( meta_serverTs ) >= ((TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY))) AND ( meta_serverTs ) < ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL 1 DAY)))))

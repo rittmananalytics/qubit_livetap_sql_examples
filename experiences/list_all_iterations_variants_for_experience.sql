@@ -16,7 +16,7 @@ WITH q_experience_v01 AS (SELECT
       experience.experience_paused_on_view AS experience_paused_on_view,
       experience.experience_paused_within_15_days AS experience_paused_within_15_days
     FROM
-      `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.livetap_experience`
+      `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_experience`
     LEFT JOIN
       UNNEST (experience) as experience
     WHERE

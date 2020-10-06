@@ -3,7 +3,7 @@ WITH
   SELECT
     *
   FROM
-    `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.livetap_transaction`
+    `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_transaction`
   WHERE
     ((( property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY)))
         AND ( property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY), INTERVAL 7 DAY))))) ),
@@ -23,7 +23,7 @@ WITH
     experience.experience_first_published_at AS experience_first_published_at,
     experience.iteration_paused_at AS iteration_paused_at,
   FROM
-    `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.livetap_experience`
+    `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_experience`
   LEFT JOIN
     UNNEST (experience) AS experience
   WHERE
@@ -53,7 +53,7 @@ SELECT
       q_experience_v01.context_id,
       NULL)) AS experience_visitors
 FROM
-  `qubit-client-CLIENTPROJECTNUM.CLIENTNAME____v2.livetap_view` AS q_view_v01
+  `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_view` AS q_view_v01
 LEFT JOIN
   q_transaction_v01
 ON
