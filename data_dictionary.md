@@ -2,7 +2,7 @@
 
 |  Analytics View | Description |
 | --- | --- |
-|  [Views](data_dictionary/attribution.md) | All visitor page and view events, the base "event" to which all other events are linked |
+|  [Views](./data_dictionary/views.md) | All visitor page and view events, the base "event" to which all other events are linked |
 |  [Entrances](data_dictionary/entrances.md) | entrance_id |
 |  [Sessions](data_dictionary/sessions.md) | Details every session for users including device, geo-location, browser type |
 |  [Product Interaction and Sales](data_dictionary/products.md) | Views where products were displayed, interacted with, or purchased |
