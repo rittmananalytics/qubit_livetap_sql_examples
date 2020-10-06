@@ -1,5 +1,7 @@
 # Example BigQuery StandardSQL Queries for Qubit Live Tap
 
+(See [Data Dictionary](./data_dictionary.md) for table and column definitions)
+
 ## Views and Visitors
 
 1. Number of unique visitors over the last 7 days
@@ -42,7 +44,7 @@
 3. Experience iteration visitor conversions over time
 4. Experience iteration converters over time
 
-# Attribution
+## Attribution
 
 1. First, Last, Even-Click and Behavioral Attribution Basket Value by Campaign for Last 7 days
 2. Entrances in a single visitor purchase cycle
