@@ -24,7 +24,7 @@ WITH q_product_v01 AS (SELECT
           product.quantity quantity,
           product.meta_type meta_type
         FROM
-          `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_product` v
+          `qubit-client-CLIENTPROJECTNUM.PROJECTNAME__v2.livetap_product` v
         LEFT JOIN
           UNNEST (product) AS product
         WHERE
@@ -37,7 +37,7 @@ SELECT
 	COUNT(DISTINCT q_product_v01.context_id)  AS product_visitors,
 	COUNT(DISTINCT(IF(q_product_v01.meta_type LIKE '%ecBasketItem', q_product_v01.view_id,NULL))) AS basket_views,
 	COUNT(DISTINCT IF(q_product_v01.transaction_id IS NOT NULL, q_product_v01.context_id, NULL))  AS converters
-FROM `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_view`  AS q_view_v01
+FROM `qubit-client-CLIENTPROJECTNUM.PROJECTNAME__v2.livetap_view`  AS q_view_v01
 LEFT JOIN q_product_v01 ON q_product_v01.view_id = q_view_v01.view_id
 
 WHERE

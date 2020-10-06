@@ -1,7 +1,7 @@
 WITH q_transaction_v01 AS (SELECT
         *
       FROM
-        `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_transaction`
+        `qubit-client-CLIENTPROJECTNUM.PROJECTNAME__v2.livetap_transaction`
       WHERE
         ((( property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY))) AND ( property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -6 DAY), INTERVAL 7 DAY)))))
       )
@@ -20,7 +20,7 @@ WITH q_transaction_v01 AS (SELECT
       experience.trafficAllocation AS trafficAllocation,
       experience.experience_status AS experience_status
     FROM
-      `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_experience`
+      `qubit-client-CLIENTPROJECTNUM.PROJECTNAME__v2.livetap_experience`
     LEFT JOIN
       UNNEST (experience) as experience
     WHERE
@@ -35,7 +35,7 @@ SELECT
 	COUNT(DISTINCT IF(q_experience_v01.experienceId IS NOT NULL,q_experience_v01.context_id,NULL))   AS experience_visitors,
 	COUNT(DISTINCT CASE WHEN q_experience_v01.experienceId IS NOT NULL THEN q_transaction_v01.transaction_id END)  AS transactions,
 	SAFE_DIVIDE((COUNT(DISTINCT IF(q_transaction_v01.transaction_id IS NOT NULL,q_experience_v01.context_id,NULL))),COUNT(DISTINCT q_experience_v01.context_id))  AS visitor_conversion_rate
-FROM `qubit-client-37040.halfords_uk_prod__v2____v2.livetap_view`  AS q_view_v01
+FROM `qubit-client-CLIENTPROJECTNUM.PROJECTNAME__v2.livetap_view`  AS q_view_v01
 LEFT JOIN q_transaction_v01 ON q_view_v01.view_id  = q_transaction_v01.view_id
 LEFT JOIN q_experience_v01 ON q_view_v01.view_id  = q_experience_v01.view_id
 
