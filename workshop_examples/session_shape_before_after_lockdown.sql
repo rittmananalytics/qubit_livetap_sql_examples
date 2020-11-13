@@ -4,7 +4,7 @@ WITH
     'First UK Lockdown' AS period,
     *
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_session`
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_session`
   WHERE
     ((( property_event_ts ) >= (TIMESTAMP('2020-03-23 00:00:00'))
         AND ( property_event_ts ) < (TIMESTAMP('2020-05-10 00:00:00')))) ),
@@ -13,7 +13,7 @@ WITH
     '7 Weeks Priod to First UK Lockdown' AS period,
     *
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_session`
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_session`
   WHERE
     ((( property_event_ts ) >= (TIMESTAMP('2020-02-10 00:00:00'))
         AND ( property_event_ts ) < (TIMESTAMP('2020-03-22 00:00:00')))) ),
@@ -22,7 +22,7 @@ WITH
     'UK Lockdown Period Year Ago' AS period,
     *
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_session`
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_session`
   WHERE
     ((( property_event_ts ) >= (TIMESTAMP('2019-03-24 00:00:00'))
         AND ( property_event_ts ) < (TIMESTAMP('2019-05-11 00:00:00')))) ),
@@ -34,7 +34,7 @@ WITH
       q_view_v01.property_event_ts ) AS hour_of_day,
     COUNT(DISTINCT lockdown_sessions.session_id) AS sessions
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   LEFT JOIN
     lockdown_sessions
   ON
@@ -53,7 +53,7 @@ WITH
       q_view_v01.property_event_ts ) AS hour_of_day,
     COUNT(DISTINCT pre_lockdown_sessions.session_id) AS sessions
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   LEFT JOIN
     pre_lockdown_sessions
   ON
@@ -72,7 +72,7 @@ WITH
       q_view_v01.property_event_ts ) AS hour_of_day,
     COUNT(DISTINCT yago_lockdown_period_sessions.session_id) AS sessions
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   LEFT JOIN
     yago_lockdown_period_sessions
   ON

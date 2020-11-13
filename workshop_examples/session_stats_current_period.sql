@@ -8,7 +8,7 @@ WITH
     q_view_v01.view_id AS view_id,
     q_view_v01.context_viewNumber,
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   WHERE
     (q_view_v01.context_viewNumber = 1)
     AND (q_view_v01.context_sessionViewNumber = 1)
@@ -21,7 +21,7 @@ WITH
     q_view_v01.context_viewNumber AS last_view_viewNumber,
     q_view_v01.context_sessionNumber AS last_view_session_number,
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   WHERE
     q_view_v01.last_view_in_session ),
   session_stats_current_period as (

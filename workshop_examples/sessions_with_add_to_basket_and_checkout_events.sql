@@ -1,7 +1,7 @@
 WITH q_session_v01_add_to_basket AS (SELECT
         *
       FROM
-        `qubit-client-37040.halfords_uk_prod__v2.livetap_session`
+        `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_session`
       WHERE
         ((( property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY))) AND ( property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY), INTERVAL 90 DAY)))))
       )
@@ -14,7 +14,7 @@ WITH q_session_v01_add_to_basket AS (SELECT
           context_sessionNumber,
           product.product_interaction_type product_interaction_type
         FROM
-          `qubit-client-37040.halfords_uk_prod__v2.livetap_product` v
+          `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_product` v
         LEFT JOIN
           UNNEST (product) AS product
         WHERE
@@ -26,7 +26,7 @@ SELECT
 	q_view_v01.property_event_ts AS first_time,
 	q_view_v01.page_subtype  AS first_page_subtype,
 	q_session_v01_add_to_basket.session_id as first_session_id
-FROM `qubit-client-37040.halfords_uk_prod__v2.livetap_view`  AS q_view_v01
+FROM `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view`  AS q_view_v01
 LEFT JOIN q_session_v01_add_to_basket ON q_session_v01_add_to_basket.session_id = q_view_v01.session_id
 LEFT JOIN q_product_v01_add_to_basket ON q_product_v01_add_to_basket.view_id = q_view_v01.view_id
 WHERE (((q_view_v01.property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY))) AND (q_view_v01.property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY), INTERVAL 90 DAY))))) AND ((UPPER(q_product_v01_add_to_basket.product_interaction_type ) = UPPER('View with Product in Basket')))
@@ -34,7 +34,7 @@ GROUP BY 1,2,3,4),
 	q_session_v01_checkout AS (SELECT
         *
       FROM
-        `qubit-client-37040.halfords_uk_prod__v2.livetap_session`
+        `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_session`
       WHERE
         ((( property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY))) AND ( property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY), INTERVAL 90 DAY)))))
       )
@@ -47,7 +47,7 @@ GROUP BY 1,2,3,4),
           context_sessionNumber,
           product.product_interaction_type product_interaction_type
         FROM
-          `qubit-client-37040.halfords_uk_prod__v2.livetap_product` v
+          `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_product` v
         LEFT JOIN
           UNNEST (product) AS product
         WHERE
@@ -59,7 +59,7 @@ SELECT
 	q_view_v01.property_event_ts  AS second_time,
 	q_view_v01.page_subtype  AS second_page_subtype,
 	q_session_v01_checkout.session_id as second_session_id
-FROM `qubit-client-37040.halfords_uk_prod__v2.livetap_view`  AS q_view_v01
+FROM `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view`  AS q_view_v01
 LEFT JOIN q_session_v01_checkout ON q_session_v01_checkout.session_id = q_view_v01.session_id
 LEFT JOIN q_product_v01_checkout ON q_product_v01_checkout.view_id = q_view_v01.view_id
 WHERE (((q_view_v01.property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY))) AND (q_view_v01.property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY), INTERVAL 90 DAY))))) AND ((UPPER(q_product_v01_checkout.product_interaction_type ) = UPPER('Product Purchase')))

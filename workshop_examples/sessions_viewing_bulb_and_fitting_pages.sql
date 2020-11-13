@@ -5,9 +5,9 @@ WITH
     q_session_v01.context_id AS context_id,
     q_session_v01.context_sessionNumber AS session_number
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   LEFT JOIN
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_session` AS q_session_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_session` AS q_session_v01
   ON
     q_session_v01.session_id = q_view_v01.session_id
   WHERE
@@ -20,9 +20,9 @@ WITH
     q_session_v01.context_id AS context_id,
     q_session_v01.context_sessionNumber AS session_number
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   LEFT JOIN
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_session` AS q_session_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_session` AS q_session_v01
   ON
     q_session_v01.session_id = q_view_v01.session_id
   WHERE

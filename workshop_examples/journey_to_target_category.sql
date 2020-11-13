@@ -10,7 +10,7 @@ WITH
     q_view_v01.view_id AS view_id,
     q_view_v01.page_subtype AS q_view_v01_page_subtype
   FROM
-    `qubit-client-37040.halfords_uk_prod__v2.livetap_view` AS q_view_v01
+    `qubit-client-PROJECT_ID.CLIENT_NAME__v2.livetap_view` AS q_view_v01
   WHERE
     (((q_view_v01.property_event_ts ) >= ((TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY)))
         AND (q_view_v01.property_event_ts ) < ((TIMESTAMP_ADD(TIMESTAMP_ADD(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL -89 DAY), INTERVAL 90 DAY)))))),
