@@ -49,3 +49,13 @@
 1. First, Last, Even-Click and Behavioral Attribution Basket Value by Campaign for Last 7 days
 2. Entrances in a single visitor purchase cycle
 3. All Referrer Channel Columns and Metrics for a Visitor over Entrances within their Purchase Cycles
+
+## Workshop Examples
+
+1. Average time to checkout by category
+2. Sessions with add to basket and checkout product interaction events
+3. Converter journey to target product category
+4. Session stats for last period
+5. Session stats for last period with y/o/y comparison
+6. Session shape before, after and year before lockdown
+7. Number of sessions with both bulb and fitting service views 
