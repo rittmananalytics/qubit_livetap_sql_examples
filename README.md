@@ -58,4 +58,5 @@
 4. Session stats for last period
 5. Session stats for last period with y/o/y comparison
 6. Session shape before, after and year before lockdown
-7. Number of sessions with both bulb and fitting service views 
+7. Number of sessions with both bulb and fitting service views
+8. Top 5 paths to category view
